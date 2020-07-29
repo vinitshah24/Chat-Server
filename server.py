@@ -44,14 +44,7 @@ def receive_message(client_sock):
 
 
 while True:
-    # select.select() calls Unix or Windows select() call with 3 params:
-    # rlist - sockets to be monitored for incoming data
-    # wlist - sockets for data to be send to
-    # xlist - sockets to be monitored for exceptions
-    # Returns lists:
-    # reading - sockets we received some data on
-    # writing - sockets ready for data to be send thru them
-    # errors  - sockets with some exceptions
+    # select.select() calls Unix or Windows select() call
     readable, writable, exceptional = \
         select.select(SOCKET_LIST, [], SOCKET_LIST)
 
